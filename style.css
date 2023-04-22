@@ -1,38 +1,47 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
-
-body {
-	margin: 0;
-	padding: 30px;
-	font-family:  'Alice', serif;
-	font-size: 18px;
-	line-height: 1.5;
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2, h3 {
-	font-family: 'Kaushan Script', cursive;
-	font-weight: normal;
-	margin: 0;
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: "Alice", serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Kaushan Script", cursive;
+  font-weight: normal;
+  margin: 0;
 }
 
 blockquote {
-	font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 /* --------------------------------------------------- */
 
 /* barvy */
 :root {
-	--svetla: #edf3f5;
-	--seda: #b2bec3;
-	--tmava: #636e72;
-	--oranzova: #ee5a24;
-	--cervena: #ea2027;
-	--zluta: #f79f1f;
-	--zelena: #a3cb38;
-	--limetka: #c4e538;
+  --svetla: #edf3f5;
+  --seda: #b2bec3;
+  --tmava: #636e72;
+  --oranzova: #ee5a24;
+  --cervena: #ea2027;
+  --zluta: #f79f1f;
+  --zelena: #a3cb38;
+  --limetka: #c4e538;
 }
 
 /*
@@ -66,3 +75,117 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+h1,
+h2 {
+  color: var(--zelena);
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1.2;
+  margin: 50px 0;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-top: 30px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.blog {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  column-gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header,
+p,
+blockquote,
+h1,
+h2,
+h3 {
+  grid-column: 2 / span 1;
+}
+
+.meta {
+  font-size: 14px;
+  color: var(--seda);
+}
+
+.tip {
+  background-color: var(--svetla);
+  font-size: 14px;
+  color: var(--tmava);
+  padding: 10px;
+  text-align: end;
+  height: max-content;
+}
+
+.tip-vlevo {
+  grid-column: 1 / span 1;
+  border-right: 2px solid var(--zluta);
+}
+
+.tip-vpravo {
+  grid-column: 3 / span 1;
+  border-left: 2px solid var(--zluta);
+}
+
+.tip a {
+  color: var(--oranzova);
+}
+
+.tip a:hover {
+  color: var(--zluta);
+}
+
+figure {
+  grid-column: 1 / -1;
+  margin: 30px 0;
+}
+
+img {
+  width: 100%;
+}
+
+figcaption {
+  font-size: 14px;
+  color: var(--seda);
+  margin-top: 3px;
+}
+
+blockquote {
+  color: var(--tmava);
+  font-size: 26px;
+  text-align: center;
+}
+
+blockquote::after,
+blockquote::before {
+  content: " ";
+  display: block;
+  height: 2px;
+  width: 20%;
+  margin: 20px auto;
+  background-color: var(--limetka);
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  grid-column: 2 / span 1;
+  color: var(--seda);
+}
+
+footer a {
+  color: var(--seda);
+}
+
+footer a:hover {
+  color: var(--tmava);
+}
